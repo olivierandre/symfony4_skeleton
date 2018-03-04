@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>
+      {% block title %}Welcome!{% endblock %}
+    </title>
+    <link rel="stylesheet" href="{{ asset('build/vendor.css') }}">
+    {% block stylesheets %}
+      <link rel="stylesheet" href="{{ asset('build/css/global.css') }}">
+    {% endblock %}
+  </head>
+  <body>
+    <div class="container">
+      {% block body %}{% endblock %}
+      <div id="app"></div>
+    </div>
+
+    <!-- these two files now must be included in every page -->
+    <script src="{{ asset('build/manifest.js') }}"></script>
+    <script src="{{ asset('build/vendor.js') }}"></script>
+    {% block javascripts %}
+      <script src="{{ asset('build/js/global.js') }}"></script>
+    {% endblock %}
+  </body>
+</html>
